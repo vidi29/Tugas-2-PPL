@@ -3,81 +3,101 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Identitas Mahasiswa</title>
+  <title>Profil Mahasiswa</title>
   <style>
-    /* --- Reset dan dasar --- */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    /* Latar belakang gradien animasi */
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     body {
-      font-family: "Inter", "Poppins", sans-serif;
-      background: #f4f6fb;
-      height: 100vh;
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(-45deg, #5A60EA, #6BC1FF, #67E6DC, #48C6EF);
+      background-size: 400% 400%;
+      animation: gradientShift 10s ease infinite;
+      color: #fff;
+      min-height: 100vh;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-    }
-
-    /* --- Kartu utama --- */
-    .card {
-      background: #ffffff;
-      padding: 40px 60px;
-      border-radius: 16px;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
       text-align: center;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-      border-top: 4px solid #3b82f6;
-      animation: fadeIn 0.8s ease;
+      overflow: hidden;
     }
 
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+    header {
+      position: absolute;
+      top: 30px;
+      width: 100%;
+      text-align: center;
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    main {
+      animation: fadeIn 1.5s ease;
     }
 
     h1 {
-      font-size: 26px;
-      color: #1e293b;
-      margin-bottom: 25px;
-      letter-spacing: 0.5px;
+      font-size: 42px;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+      font-size: 22px;
+      font-weight: 400;
+      margin-bottom: 40px;
+      opacity: 0.9;
     }
 
     p {
       font-size: 18px;
-      color: #475569;
-      margin: 10px 0;
+      margin: 8px 0;
     }
 
-    b {
-      color: #1e40af;
-    }
-
-    /* --- Animasi masuk halus --- */
+    /* Animasi teks masuk */
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(15px); }
+      from { opacity: 0; transform: translateY(25px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* --- Garis bawah elegan --- */
-    .divider {
-      width: 60px;
-      height: 3px;
-      background-color: #3b82f6;
-      margin: 0 auto 20px;
-      border-radius: 10px;
+    /* Ornamen gelembung halus */
+    .bubble {
+      position: absolute;
+      bottom: -50px;
+      background: rgba(255, 255, 255, 0.25);
+      border-radius: 50%;
+      animation: rise 10s infinite ease-in;
+    }
+
+    @keyframes rise {
+      from { transform: translateY(0) scale(1); opacity: 1; }
+      to { transform: translateY(-110vh) scale(1.3); opacity: 0; }
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>Identitas Mahasiswa</h1>
-    <div class="divider"></div>
+  <header>
+    🌐 Website Profil Mahasiswa
+  </header>
+
+  <main>
+    <h1>Vidi Pratama Adityas Mauladani</h1>
+    <h2>Mahasiswa Teknik Informatika</h2>
     <p><b>NIM:</b> 230411100120</p>
-    <p><b>Nama:</b> Vidi Pratama Adityas Mauladani</p>
-    <p><b>Program Studi:</b> Teknik Informatika</p>
-  </div>
+    <p><b>Universitas:</b> Universitas Trunojoyo Madura</p>
+  </main>
+
+  <!-- Ornamen gelembung animasi -->
+  <div class="bubble" style="width:80px; height:80px; left:10%; animation-delay:0s;"></div>
+  <div class="bubble" style="width:50px; height:50px; left:25%; animation-delay:3s;"></div>
+  <div class="bubble" style="width:100px; height:100px; left:70%; animation-delay:5s;"></div>
+  <div class="bubble" style="width:60px; height:60px; left:85%; animation-delay:1s;"></div>
 </body>
 </html>
