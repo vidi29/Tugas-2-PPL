@@ -5,84 +5,76 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Identitas Mahasiswa</title>
   <style>
-    /* Latar belakang gradient animasi */
-    @keyframes gradientMove {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+    /* --- Reset dan dasar --- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
     body {
-      margin: 0;
-      font-family: "Poppins", sans-serif;
-      background: linear-gradient(270deg, #74ABE2, #5563DE, #7D63FF);
-      background-size: 600% 600%;
-      animation: gradientMove 10s ease infinite;
+      font-family: "Inter", "Poppins", sans-serif;
+      background: #f4f6fb;
       height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
-      color: #fff;
     }
 
-    /* Kartu utama transparan */
+    /* --- Kartu utama --- */
     .card {
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(12px);
-      padding: 50px 70px;
-      border-radius: 25px;
-      box-shadow: 0 8px 35px rgba(0, 0, 0, 0.3);
+      background: #ffffff;
+      padding: 40px 60px;
+      border-radius: 16px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
       text-align: center;
-      position: relative;
-      z-index: 2;
-      animation: fadeIn 1.2s ease-in-out;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      border-top: 4px solid #3b82f6;
+      animation: fadeIn 0.8s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
     }
 
     h1 {
-      margin-bottom: 20px;
-      font-size: 30px;
-      letter-spacing: 1px;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+      font-size: 26px;
+      color: #1e293b;
+      margin-bottom: 25px;
+      letter-spacing: 0.5px;
     }
 
     p {
       font-size: 18px;
+      color: #475569;
       margin: 10px 0;
     }
 
-    /* Animasi fade-in */
+    b {
+      color: #1e40af;
+    }
+
+    /* --- Animasi masuk halus --- */
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(25px); }
+      from { opacity: 0; transform: translateY(15px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Efek glowing di sekitar kartu */
-    .glow {
-      position: absolute;
-      width: 400px;
-      height: 400px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(255,255,255,0.3), transparent 70%);
-      animation: floatGlow 6s ease-in-out infinite alternate;
-      filter: blur(40px);
-      z-index: 1;
-    }
-
-    /* Animasi cahaya lembut bergerak */
-    @keyframes floatGlow {
-      from { transform: translate(-100px, -100px); }
-      to { transform: translate(100px, 100px); }
+    /* --- Garis bawah elegan --- */
+    .divider {
+      width: 60px;
+      height: 3px;
+      background-color: #3b82f6;
+      margin: 0 auto 20px;
+      border-radius: 10px;
     }
   </style>
 </head>
 <body>
-  <!-- Ornamen cahaya lembut -->
-  <div class="glow"></div>
-
-  <!-- Kartu identitas -->
   <div class="card">
     <h1>Identitas Mahasiswa</h1>
+    <div class="divider"></div>
     <p><b>NIM:</b> 230411100120</p>
     <p><b>Nama:</b> Vidi Pratama Adityas Mauladani</p>
     <p><b>Program Studi:</b> Teknik Informatika</p>
